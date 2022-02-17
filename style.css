@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #0d0f1b;
+}
+ul {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+ul li {
+  list-style: none;
+}
+ul li::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 6em;
+  font-weight: 700;
+  pointer-events: none;
+  opacity: 0;
+  letter-spacing: 0px;
+  transition: 0.5s;
+  white-space: nowrap;
+}
+ul li:hover::before {
+  opacity: 0.05;
+  letter-spacing: 20px;
+}
+ul li a {
+  position: relative;
+  display: inline-block;
+  padding: 6px 10px;
+  text-decoration: none;
+  background: #2196f3;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  overflow: hidden;
+  transition: 0.5s;
+  z-index: 1;
+}
+ul:hover li a {
+  opacity: 0;
+}
+ul li a:hover {
+  transform: scale(1.4);
+  z-index: 1000;
+  background: #ff2d81;
+  opacity: 1;
+}
